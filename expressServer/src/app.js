@@ -1,12 +1,20 @@
 const express = require('express')
-const serviceRoutes = require('./routes/index')
+const loaders = require('./appLoaders')
 
-const app = express()
-app.use('/', serviceRoutes)
+async function startServer() {
 
-const PORT = 8081
-const HOST = '0.0.0.0';
+    const app = express();
+    await loaders.init(app);
 
-app.listen(PORT, HOST, () => {
-    console.log(`Server running on port ${PORT}`)
-})
+    const PORT = 8081
+    const HOST = '0.0.0.0';
+
+    app.listen(PORT, HOST, () => {
+        console.log(`Server running on port ${PORT}`)
+    })
+}
+
+startServer();
+
+
+
