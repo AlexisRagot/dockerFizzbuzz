@@ -1,5 +1,5 @@
 {
-  "name": "docker-fizz-buzz",
+  "name": "basic-server-fizz-buzz",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

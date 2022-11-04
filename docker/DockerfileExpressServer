@@ -1,0 +1,12 @@
+FROM node:16.18-alpine
+
+ENV NODE_ENV=production
+
+COPY ./ /usr/local/app/
+WORKDIR /usr/local/app/expressServer
+
+RUN npm install
+
+EXPOSE 8081
+
+CMD npm run start
